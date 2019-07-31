@@ -155,7 +155,7 @@ def getTxt(m):
             file_info = bot.get_file(m.document.file_id)
             downloaded_file = bot.download_file(file_info.file_path)
             src = "laws\\" + m.document.file_name
-            f = open(src, 'wb')
+            f = open(src, 'w')
             f.write(downloaded_file)
             updateDB(m.document.file_name)
             send(m.from_user.id, "ФЗ добавлен")
